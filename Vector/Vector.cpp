@@ -9,7 +9,7 @@ Vector::Vector(int n)
 		n = 2;
 	}
 	this->_size = 0;
-	this->_resizeFactor = 4;
+	this->_resizeFactor = n;
 	this->_elements = new int[n];
 	this->_capacity = n;
 }
@@ -17,6 +17,7 @@ Vector::Vector(int n)
 Vector::~Vector()
 {
 	delete[] this->_elements;
+	this->_elements = nullptr;
 }
 
 int Vector::size() const
